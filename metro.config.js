@@ -6,4 +6,8 @@ const { withNativeWind } = require('nativewind/metro');
 // eslint-disable-next-line no-undef
 const config = getDefaultConfig(__dirname);
 
+if (process.env.STORYBOOK === "1"){
+    config.resolver.resolverMainFields.unshift("sbmodern")
+}
+
 module.exports = withNativeWind(config, { input: './global.css' });

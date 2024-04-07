@@ -1,8 +1,9 @@
-import '../global.css';
-
-import '../translation';
-
 import { Stack, router } from 'expo-router';
+import Constants from 'expo-constants';
+import Storybook from '../.storybook';
+
+import '../global.css';
+import '../translation';
 import { HeaderButton } from '~/src/components/HeaderButton';
 
 const quantity = 2;
@@ -12,7 +13,7 @@ export const unstable_settings = {
   initialRouteName: '(tabs)',
 };
 
-export default function RootLayout() {
+function RootLayout() {
   return <App />;
 }
 
@@ -53,3 +54,5 @@ function App() {
     </Stack>
   );
 }
+
+export default Constants.expoConfig?.extra?.storybookEnabled ? Storybook : RootLayout;
