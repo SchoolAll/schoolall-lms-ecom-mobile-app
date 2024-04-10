@@ -1,15 +1,20 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { forwardRef } from 'react';
 import { Pressable, StyleSheet } from 'react-native';
 
-export const HeaderButton = forwardRef<
+export const IconButton = forwardRef<
   typeof Pressable,
-  { onPress?: () => void; iconName: string | undefined | any; iconColor: string; iconSize: number }
->(({ onPress, iconName, iconColor, iconSize }, ref) => {
+  {
+    onPress?: () => void;
+    iconName: string | undefined | any;
+    iconColor: string;
+    iconSize: number;
+    IconImport: any;
+  }
+>(({ onPress, iconName, iconColor, iconSize, IconImport }, ref) => {
   return (
     <Pressable onPress={onPress}>
       {({ pressed }) => (
-        <FontAwesome
+        <IconImport
           name={iconName}
           size={iconSize}
           color={iconColor}

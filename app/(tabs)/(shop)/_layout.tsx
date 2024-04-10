@@ -1,7 +1,8 @@
 import { View } from 'react-native';
 import React from 'react';
 import { Link, Stack } from 'expo-router';
-import { HeaderButton } from '~/src/components/HeaderButton';
+import { IconButton } from '~/src/components/IconButton';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function EcommerceLayout() {
   return (
@@ -11,10 +12,20 @@ export default function EcommerceLayout() {
         headerRight: () => (
           <View style={{ flexDirection: 'row' }}>
             <Link href="/cart" asChild>
-              <HeaderButton iconName={'shopping-cart'} iconColor="#000" iconSize={23} />
+              <IconButton
+                iconName={'shopping-cart'}
+                iconColor="#000"
+                iconSize={23}
+                IconImport={FontAwesome}
+              />
             </Link>
             <Link href="/profile" asChild>
-              <HeaderButton iconName={'user-circle-o'} iconColor="#000" iconSize={23} />
+              <IconButton
+                iconName={'user-circle-o'}
+                iconColor="#000"
+                iconSize={23}
+                IconImport={FontAwesome}
+              />
             </Link>
           </View>
         ),

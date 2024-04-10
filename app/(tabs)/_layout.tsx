@@ -1,6 +1,5 @@
-import { Link, Tabs } from 'expo-router';
+import { Tabs } from 'expo-router';
 
-import { HeaderButton } from '../../src/components/HeaderButton';
 import { TabBarIcon } from '../../src/components/TabBarIcon';
 import { View, Text } from 'react-native';
 
@@ -15,10 +14,10 @@ export default function TabLayout() {
         // headerRight: () => (
         //   <View style={{ flexDirection: 'row' }}>
         //     <Link href="/cart" asChild>
-        //       <HeaderButton iconName={'shopping-cart'} iconColor="#000" iconSize={23} />
+        //       <IconButton iconName={'shopping-cart'} iconColor="#000" iconSize={23} />
         //     </Link>
         //     <Link href="/profile" asChild>
-        //       <HeaderButton iconName={'user-circle-o'} iconColor="#000" iconSize={23} />
+        //       <IconButton iconName={'user-circle-o'} iconColor="#000" iconSize={23} />
         //     </Link>
         //   </View>
         // ),
