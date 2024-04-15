@@ -28,6 +28,10 @@ export default function DashboardLayout() {
             </Link>
           </View>
         ),
+        headerLargeTitle: true,
+        headerLargeTitleStyle: {
+          color: '#000',
+        },
       }}>
       <Stack.Screen name="index" options={{ headerTitle: 'Dashboard' }} />
     </Stack>

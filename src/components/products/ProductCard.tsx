@@ -65,7 +65,7 @@ const ProductCard = ({
                 paddingVertical: 8,
               }}>
               <Text numberOfLines={1} className={''}>
-                {`${name.slice(0, 20)}`}
+                {name}
               </Text>
               <Text style={{ marginRight: 0 }} className={''}>
                 Le {price}

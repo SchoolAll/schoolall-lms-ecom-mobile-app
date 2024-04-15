@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, Stack } from 'expo-router';
 import { IconButton } from '~/src/components/IconButton';
 import { FontAwesome } from '@expo/vector-icons';
+import { TabBarHeaderLayout } from '~/src/components/TabBarHeaderLayout';
 
 export default function HomeLayout() {
   return (
@@ -19,12 +20,23 @@ export default function HomeLayout() {
               />
             </Link>
             <Link href="/profile" asChild>
-              <FontAwesome iconName={'user-circle-o'} iconColor="#000" iconSize={23} />
+              <IconButton
+                iconName={'user-circle-o'}
+                iconColor="#000"
+                iconSize={23}
+                IconImport={FontAwesome}
+              />
             </Link>
           </View>
         ),
       }}>
-      <Stack.Screen name="index" options={{ headerTitle: 'Home' }} />
+      <Stack.Screen
+        name="index"
+        options={{
+          ...TabBarHeaderLayout,
+          headerTitle: 'Home',
+        }}
+      />
     </Stack>
   );
 }

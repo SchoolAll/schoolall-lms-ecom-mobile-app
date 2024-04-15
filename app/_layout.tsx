@@ -4,14 +4,17 @@ import { useEffect } from 'react';
 import { SplashScreen, Stack, router } from 'expo-router';
 import Constants from 'expo-constants';
 import { FontAwesome } from '@expo/vector-icons';
-import { TamaguiProvider } from 'tamagui';
-import Storybook from '../.storybook';
+import { Roboto_400Regular, Roboto_500Medium } from '@expo-google-fonts/roboto';
+import { DefaultTheme, PaperProvider } from 'react-native-paper';
 
+import Storybook from '../.storybook';
 import '../global.css';
 import '../translation';
 
 import { IconButton } from '~/src/components/IconButton';
-import tamaguiConfig from '~/tamagui.config';
+import { StatusBar } from 'expo-status-bar';
+import { customTheme } from '~/constants/customTheme';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 if ((Text as any).defaultProps == null) (Text as any).defaultProps = {};
 (Text as any).defaultProps.allowFontScaling = false;
@@ -27,8 +30,8 @@ export const unstable_settings = {
 
 function RootLayout() {
   const [loaded, error] = useFonts({
-    Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
-    InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
+    RobotoRegular: Roboto_400Regular,
+    RobotoMedium: Roboto_500Medium,
   });
 
   useEffect(() => {
@@ -45,20 +48,32 @@ function RootLayout() {
   if (!loaded) {
     return null;
   }
-  return <RootLayoutNav />;
+
+  const theme = {
+    ...DefaultTheme,
+    ...customTheme,
+  };
+  return (
+    <PaperProvider theme={theme}>
+      <SafeAreaProvider>
+        <RootLayoutNav />
+        <StatusBar style="auto" />
+      </SafeAreaProvider>
+    </PaperProvider>
+  );
 }
 
 function RootLayoutNav() {
   return (
-    <TamaguiProvider config={tamaguiConfig}>
+    <>
       <App />
-    </TamaguiProvider>
+    </>
   );
 }
 
 function App() {
   return (
-    <Stack>
+    <Stack initialRouteName="(tabs)">
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen
         name="cart"

@@ -11,7 +11,7 @@ export interface ProductCardProps {
     ratingValue: number;
     totalRating: number;
     onPressCard: () => void;
-    onPressBuyNow: () => void;
+    onPressBuyNow: () => void | string;
     items?: string[]
 
 }

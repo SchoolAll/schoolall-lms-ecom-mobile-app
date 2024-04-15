@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, Stack } from 'expo-router';
 import { IconButton } from '~/src/components/IconButton';
 import { FontAwesome } from '@expo/vector-icons';
+import { TabBarHeaderLayout } from '~/src/components/TabBarHeaderLayout';
 
 export default function _layout() {
   return (
@@ -29,7 +30,7 @@ export default function _layout() {
           </View>
         ),
       }}>
-      <Stack.Screen name="index" options={{ headerTitle: 'Blogs' }} />
+      <Stack.Screen name="index" options={{ ...TabBarHeaderLayout, headerTitle: 'Blogs' }} />
     </Stack>
   );
 }

@@ -3,7 +3,6 @@
     "name": "schoolall-lms-ecom-mobile-app",
     "slug": "schoolall-lms-ecom-mobile-app",
     "version": "1.0.0",
-
     "scheme": "schoolall-lms-ecom-mobile-app",
     "web": {
       "bundler": "metro",
@@ -13,13 +12,11 @@
     "plugins": ["expo-router", "expo-localization"],
     "experiments": {
       "typedRoutes": true,
-
       "tsconfigPaths": true
     },
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",

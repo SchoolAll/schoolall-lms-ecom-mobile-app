@@ -1,9 +1,18 @@
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, ViewProps, ViewStyle } from 'react-native';
 
-export const Container = ({ children }: { children: React.ReactNode }) => {
-  return <SafeAreaView className={styles.container}>{children}</SafeAreaView>;
+type ContainerProps = {
+  children: React.ReactNode;
+  style: ViewStyle;
+};
+
+export const Container = ({ children, style }: ContainerProps) => {
+  return (
+    <SafeAreaView style={[{ flex: 1 }, style]} className={styles.container}>
+      {children}
+    </SafeAreaView>
+  );
 };
 
 const styles = {
-  container: 'flex flex-1 p-6',
+  container: 'flex flex-1',
 };

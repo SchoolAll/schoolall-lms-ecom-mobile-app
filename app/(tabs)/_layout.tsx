@@ -1,26 +1,43 @@
 import { Tabs } from 'expo-router';
+import { View, Text, StyleSheet } from 'react-native';
+import { useTheme } from 'react-native-paper';
+import { BlurView } from 'expo-blur';
 
 import { TabBarIcon } from '../../src/components/TabBarIcon';
-import { View, Text } from 'react-native';
 
 export default function TabLayout() {
+  const theme = useTheme();
   return (
     <Tabs
       initialRouteName="(home)"
       screenOptions={{
-        tabBarActiveTintColor: 'black',
-        // headerTitleAlign: 'left',
+        tabBarActiveTintColor: theme.colors.primary,
+        tabBarInactiveTintColor: '#000',
         headerShown: false,
-        // headerRight: () => (
-        //   <View style={{ flexDirection: 'row' }}>
-        //     <Link href="/cart" asChild>
-        //       <IconButton iconName={'shopping-cart'} iconColor="#000" iconSize={23} />
-        //     </Link>
-        //     <Link href="/profile" asChild>
-        //       <IconButton iconName={'user-circle-o'} iconColor="#000" iconSize={23} />
-        //     </Link>
-        //   </View>
-        // ),
+        tabBarLabelStyle: {
+          fontSize: 13,
+          fontWeight: '500',
+        },
+        tabBarStyle: {
+          position: 'absolute',
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          borderTopWidth: 0,
+          paddingTop: 5,
+          backgroundColor: theme.colors.outlineVariant,
+        },
+        tabBarBackground: () => (
+          <BlurView
+            intensity={95}
+            style={{
+              // ...StyleSheet.absoluteFillObject,
+              overflow: 'hidden',
+              borderTopLeftRadius: 20,
+              borderTopRightRadius: 20,
+              backgroundColor: theme.colors.surface,
+            }}
+          />
+        ),
       }}>
       <Tabs.Screen
         name="(home)"
@@ -28,12 +45,6 @@ export default function TabLayout() {
           headerTitle: 'Home',
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
-
-          // headerLeft: () => (
-          //   <>
-          //     <Text>Hello</Text>
-          //   </>
-          // ),
         }}
       />
       <Tabs.Screen

@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, Stack } from 'expo-router';
 import { IconButton } from '~/src/components/IconButton';
 import { FontAwesome } from '@expo/vector-icons';
+import { TabBarHeaderLayout } from '~/src/components/TabBarHeaderLayout';
 
 export default function EcommerceLayout() {
   return (
@@ -30,8 +31,20 @@ export default function EcommerceLayout() {
           </View>
         ),
       }}>
-      <Stack.Screen name="index" options={{ headerTitle: 'Shop' }} />
-      <Stack.Screen name="productDetails" options={{ headerTitle: 'Product Details' }} />
+      <Stack.Screen
+        name="index"
+        options={{
+          ...TabBarHeaderLayout,
+          headerTitle: 'Shop',
+        }}
+      />
+      <Stack.Screen
+        name="productDetails"
+        options={{
+          ...TabBarHeaderLayout,
+          headerTitle: 'Product Details',
+        }}
+      />
     </Stack>
   );
 }
