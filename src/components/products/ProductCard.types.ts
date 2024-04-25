@@ -1,8 +1,10 @@
+import { ImageSourcePropType } from "react-native";
+
 export interface ProductCardProps {
     productId?: string;
     name: string;
     price: number;
-    mediaUrls: string;
+    mediaUrls: ImageSourcePropType;
     quantity?: number;
     description?: string;
     publishedAt?: string;

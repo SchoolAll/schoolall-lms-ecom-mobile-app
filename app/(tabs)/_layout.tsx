@@ -44,7 +44,7 @@ export default function TabLayout() {
         options={{
           headerTitle: 'Home',
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} size={24} />,
         }}
       />
       <Tabs.Screen
@@ -52,7 +52,7 @@ export default function TabLayout() {
         options={{
           headerTitle: 'Shop',
           tabBarLabel: 'Shop',
-          tabBarIcon: ({ color }) => <TabBarIcon name="shopping-bag" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="shopping-bag" color={color} size={22} />,
         }}
       />
       <Tabs.Screen
@@ -60,7 +60,7 @@ export default function TabLayout() {
         options={{
           headerTitle: 'Blogs',
           tabBarLabel: 'Blogs',
-          tabBarIcon: ({ color }) => <TabBarIcon name="newspaper-o" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="newspaper-o" color={color} size={20} />,
         }}
       />
       <Tabs.Screen
@@ -68,7 +68,7 @@ export default function TabLayout() {
         options={{
           headerTitle: 'Dashboard',
           tabBarLabel: 'Dashobard',
-          tabBarIcon: ({ color }) => <TabBarIcon name="dashboard" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="dashboard" color={color} size={22} />,
         }}
       />
     </Tabs>

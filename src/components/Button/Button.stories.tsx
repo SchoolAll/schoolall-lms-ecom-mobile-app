@@ -10,6 +10,9 @@ const MyButtonMeta: Meta<typeof AppButton> = {
   },
   args: {
     text: 'Hello world',
+    backgroundColor: 'red',
+    borderRadius: 8,
+    onPress: () => console.log('Button pressed'),
   },
   decorators: [
     (Story) => (
